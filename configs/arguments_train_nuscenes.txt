@@ -1,0 +1,48 @@
+--mode train
+--model_name TRIDE
+--main_path ../
+--train_text_feature_general_path ../training/nuscenes/nuscenes_train_text_feature_general.txt
+--train_text_feature_left_path ../training/nuscenes/nuscenes_train_text_feature_left.txt
+--train_text_feature_mid_left_path ../training/nuscenes/nuscenes_train_text_feature_mid_left.txt
+--train_text_feature_mid_right_path ../training/nuscenes/nuscenes_train_text_feature_mid_right.txt
+--train_text_feature_right_path ../training/nuscenes/nuscenes_train_text_feature_right.txt
+--train_weather_condition_path ../training/nuscenes/train_weather_conditions.txt
+--train_ground_truth_path ../training/nuscenes/nuscenes_train_ground_truth_interp.txt
+--train_lidar_path ../training/nuscenes/nuscenes_train_lidar.txt
+--train_image_path ../training/nuscenes/nuscenes_train_image.txt
+--train_radar_path ../training/nuscenes/nuscenes_train_radar_new.txt
+
+--validation_image_path ../validation/nuscenes/nuscenes_val_image.txt
+--validation_text_feature_general_path ../validation/nuscenes/nuscenes_val_text_feature_general.txt
+--validation_text_feature_left_path ../validation/nuscenes/nuscenes_val_text_feature_left.txt
+--validation_text_feature_mid_left_path ../validation/nuscenes/nuscenes_val_text_feature_mid_left.txt
+--validation_text_feature_mid_right_path ../validation/nuscenes/nuscenes_val_text_feature_mid_right.txt
+--validation_text_feature_right_path ../validation/nuscenes/nuscenes_val_text_feature_right.txt
+--validation_weather_condition_path ../validation/nuscenes/val_weather_conditions.txt
+--validation_ground_truth_path ../validation/nuscenes/nuscenes_val_lidar.txt
+--validation_radar_path ../validation/nuscenes/nuscenes_val_radar_new.txt
+
+--batch_size 10
+--num_epochs 450
+--encoder resnet34_bts
+--learning_rate 1e-4
+--weight_decay 1e-4
+--reg_loss l1
+--w_smoothness 0.001
+--adam_eps 1e-2
+--input_height 448
+--input_width 800
+--max_depth 100
+--log_directory ./saved_models/
+--log_freq 100
+--do_online_eval
+--eval_freq 51
+--min_depth_eval 1e-3
+--max_depth_eval 80
+--eval_summary_directory ./saved_models/eval/
+--num_threads 8
+--text_fuse cross_attention
+--text_hidden_dim 128
+--fuse wafb
+--use_img_feat
+--point_hidden_dim 256

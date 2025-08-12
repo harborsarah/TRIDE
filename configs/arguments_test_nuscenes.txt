@@ -1,0 +1,25 @@
+--mode test
+--main_path ../
+--validation_image_path ../testing/nuscenes/nuscenes_test_image.txt
+--validation_text_feature_general_path ../testing/nuscenes/nuscenes_test_text_feature_general.txt
+--validation_text_feature_left_path ../testing/nuscenes/nuscenes_test_text_feature_left.txt
+--validation_text_feature_mid_left_path ../testing/nuscenes/nuscenes_test_text_feature_mid_left.txt
+--validation_text_feature_mid_right_path ../testing/nuscenes/nuscenes_test_text_feature_mid_right.txt
+--validation_text_feature_right_path ../testing/nuscenes/nuscenes_test_text_feature_right.txt
+--validation_weather_condition_path ../testing/nuscenes/test_weather_conditions.txt
+--validation_ground_truth_path ../testing/nuscenes/nuscenes_test_lidar.txt
+--validation_radar_path ../testing/nuscenes/nuscenes_test_radar_new.txt
+--encoder resnet34_bts
+--input_height 900
+--input_width 1600
+--max_depth 100
+--min_depth_eval 1e-3
+--max_depth_eval 80
+--num_threads 8
+--text_fuse cross_attention
+--text_hidden_dim 128
+--fuse wafb
+--use_img_feat
+--point_hidden_dim 256
+--post_process
+--checkpoint_path ./saved_models/model-1082500-best_mae_1.42199
